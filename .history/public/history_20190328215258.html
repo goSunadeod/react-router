@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a onclick="push('/a')">去a</a>
+  <a onclick="push('/b')">去b</a>
+  <script>
+     function push(path) {
+       history.pushState({p: path}, null, path)
+     }
+    //  pushState方法的功能是在历史记录队列堆栈中加入一个新的记录，并把当前页面“跳转”到这个自己添加的“虚假”历史记录上。由于历史记录是 “虚假”的，页面不会真正的跳转，而是地址栏里的URL发生变化。可以点击浏览器上的后退按钮来返回“跳转”前的页面。pushState方法有3个参 数，第一个是数据参数，这个后面再说；第二个是历史记录的标题，这个参数貌似只是作为保留参数，目前的浏览器暂时不处理它，所以直接传如null就可以 了；第三个参数是这个历史记录URL，也就是可以改变浏览器地址栏的URL，它可以使用绝对路径，但是不能跨域。
+  window.addEventListener('popstate', ()=> {
+    console.log(e);
+  })
+  </script>
+</body>
+</html>

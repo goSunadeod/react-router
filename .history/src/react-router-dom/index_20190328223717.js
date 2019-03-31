@@ -1,0 +1,2 @@
+
+import HashRouter from './HashRouter';
